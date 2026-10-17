@@ -1,0 +1,24 @@
+@{
+    var cur = ViewContext.RouteData.Values["controller"]?.ToString();
+    var items = new[]
+    {
+        (Ctrl: "Dashboard", Text: "Trang chính", Icon: "fa-gauge"),
+        (Ctrl: "Category",  Text: "Danh mục",    Icon: "fa-list"),
+        (Ctrl: "Product",   Text: "Sản phẩm",    Icon: "fa-box"),
+        (Ctrl: "Blog",      Text: "Blogs",       Icon: "fa-newspaper"),
+        (Ctrl: "Banner",    Text: "Banner",      Icon: "fa-image"),
+    };
+}
+<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
+        @foreach (var i in items)
+        {
+            <li class="nav-item">
+                <a asp-area="Admin" asp-controller="@i.Ctrl" asp-action="Index" class="nav-link @(cur == i.Ctrl ? "active" : "")">
+                    <i class="nav-icon fas @i.Icon"></i>
+                    <p>@i.Text</p>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

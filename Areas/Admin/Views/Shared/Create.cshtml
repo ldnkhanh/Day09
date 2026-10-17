@@ -1,0 +1,18 @@
+@model object
+@{
+    var c = (string)ViewContext.RouteData.Values["controller"]!;
+    ViewData["Title"] = "Thêm mới " + c;
+}
+<div class="card card-primary">
+    <form asp-action="Create" method="post">
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <partial name="@("_Form" + c)" model="Model" />
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Lưu</button>
+            <a asp-action="Index" class="btn btn-default">Quay lại</a>
+        </div>
+    </form>
+</div>
+@section Scripts { <partial name="_ValidationScripts" /> }

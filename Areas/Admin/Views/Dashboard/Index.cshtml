@@ -1,0 +1,8 @@
+@{ ViewData["Title"] = "Dashboard"; }
+<div class="row">
+    <div class="col-lg-3 col-6"><div class="small-box bg-info"><div class="inner"><h3>@ViewBag.Categories</h3><p>Danh mục</p></div><div class="icon"><i class="fas fa-list"></i></div><a asp-controller="Category" asp-action="Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a></div></div>
+    <div class="col-lg-3 col-6"><div class="small-box bg-success"><div class="inner"><h3>@ViewBag.Products</h3><p>Sản phẩm</p></div><div class="icon"><i class="fas fa-box"></i></div><a asp-controller="Product" asp-action="Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a></div></div>
+    <div class="col-lg-3 col-6"><div class="small-box bg-warning"><div class="inner"><h3>@ViewBag.Blogs</h3><p>Blogs</p></div><div class="icon"><i class="fas fa-newspaper"></i></div><a asp-controller="Blog" asp-action="Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a></div></div>
+    <div class="col-lg-3 col-6"><div class="small-box bg-danger"><div class="inner"><h3>@ViewBag.Banners</h3><p>Banner</p></div><div class="icon"><i class="fas fa-image"></i></div><a asp-controller="Banner" asp-action="Index" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a></div></div>
+</div>
+<p>Đây là nội dung trang chủ Admin</p>

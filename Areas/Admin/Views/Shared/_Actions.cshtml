@@ -1,0 +1,5 @@
+@model int
+<a asp-action="Edit" asp-route-id="@Model" class="btn btn-warning btn-xs" title="Sửa"><i class="fas fa-edit"></i></a>
+<form asp-action="Delete" asp-route-id="@Model" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa?');">
+    <button type="submit" class="btn btn-danger btn-xs" title="Xóa"><i class="fas fa-trash"></i></button>
+</form>

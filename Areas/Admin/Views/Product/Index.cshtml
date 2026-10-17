@@ -1,0 +1,20 @@
+@model List<Product>
+@{ ViewData["Title"] = "Danh sách sản phẩm"; }
+<div class="card">
+    <div class="card-header"><a asp-action="Create" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Thêm mới</a></div>
+    <div class="card-body p-0">
+        <table class="table table-bordered table-striped mb-0">
+            <thead><tr><th>#</th><th>Tên</th><th>Danh mục</th><th>Giá</th><th>Giá KM</th><th>Trạng thái</th><th>Ngày tạo</th><th style="width:110px"></th></tr></thead>
+            <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Id</td><td>@x.Name</td><td>@x.Category?.Name</td><td>@x.Price.ToString("N0")</td><td>@x.SalePrice.ToString("N0")</td>
+                    <td><partial name="_Status" model="x.Status" /></td><td>@x.CreatedDate.ToString("dd/MM/yyyy")</td>
+                    <td><partial name="_Actions" model="x.Id" /></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
